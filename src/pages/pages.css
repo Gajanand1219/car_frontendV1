@@ -1,0 +1,126 @@
+/* src/pages/pages.css */
+.legal-page {
+    padding: 40px 0 60px;
+    background: var(--gray-50);
+    min-height: 80vh;
+}
+
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 48px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.legal-content h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--gray-900);
+}
+
+.last-updated {
+    color: var(--gray-500);
+    font-size: 14px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.legal-section {
+    margin-bottom: 32px;
+}
+
+.legal-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 12px;
+}
+
+.legal-section p {
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.legal-section ul {
+    padding-left: 24px;
+    margin-bottom: 12px;
+}
+
+.legal-section ul li {
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: 6px;
+}
+
+.legal-section ul li strong {
+    color: var(--gray-800);
+}
+
+.legal-footer {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .legal-content {
+        padding: 24px;
+        margin: 0 16px;
+    }
+
+    .legal-content h1 {
+        font-size: 24px;
+    }
+
+    .legal-section h2 {
+        font-size: 18px;
+    }
+
+    .legal-section ul {
+        padding-left: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-content {
+        padding: 18px;
+        margin: 0 8px;
+    }
+
+    .legal-content h1 {
+        font-size: 20px;
+    }
+
+    .legal-section {
+        margin-bottom: 20px;
+    }
+
+    .legal-section ul li {
+        font-size: 14px;
+    }
+}
