@@ -16,7 +16,26 @@ import SellerLoginModal from './SellerLoginModal';
 
 const SellerPortalContent = () => {
     const { user, logout, isAuthenticated, isAdmin } = useAuth();
-    const { loading } = useSeller();
+    const {
+    loading,
+    fetchSellerCars,
+    fetchStats
+} = useSeller();
+
+useEffect(() => {
+    if (isAuthenticated && user) {
+        setEnquiry(prev => ({
+            ...prev,
+            name: user.name || '',
+            email: user.email || '',
+            phone: user.mobile || ''
+        }));
+    }
+}, [isAuthenticated, user]);
+
+
+
+
     const navigate = useNavigate();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
@@ -24,6 +43,13 @@ const SellerPortalContent = () => {
     
     // ✅ Check if user is seller
     const isSeller = user?.role === 'seller' || user?.role === 'RoleEnum.seller';
+
+    useEffect(() => {
+    if (isAuthenticated && isSeller) {
+        fetchSellerCars();
+        fetchStats();
+    }
+}, [isAuthenticated, isSeller]);
     
     // ✅ Enquiry State
     const [enquiry, setEnquiry] = useState({

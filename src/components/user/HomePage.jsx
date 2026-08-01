@@ -65,10 +65,11 @@ const HomePage = () => {
             const timer = setTimeout(() => {
                 setShowPopup(true);
                 sessionStorage.setItem("popupShown", "true");
-            }, 20000);
+            }, 10000);
             return () => clearTimeout(timer);
         }
     }, []);
+    
 
     const closePopup = () => {
         setShowPopup(false);
@@ -88,9 +89,11 @@ const HomePage = () => {
         }
     };
 
-    const handleCarClick = (carId) => {
-        navigate(`/cars/${carId}`);
-    };
+    
+
+    const handleCarClick = () => {
+    navigate("/cars");
+};
 
     const handleEnquiry = async (e) => {
         e.preventDefault();
@@ -387,7 +390,7 @@ const HomePage = () => {
                                         key={index} 
                                         className="hp-car-card" 
                                         style={{ animationDelay: `${index * 0.1}s` }}
-                                        onClick={() => handleCarClick(car.id)}
+                                        onClick={() => handleCarClick()}
                                     >
                                         <div className="hp-car-image">
                                             <img
@@ -468,56 +471,122 @@ const HomePage = () => {
 
 
             {/* ==================== MARQUEE SERVICES ==================== */}
-            <section className="hp-marquee-section">
-                <div className="hp-marquee-wrapper">
-                    <div className="hp-marquee-content">
-                        <span className="marquee-item">
-                            <span className="marquee-icon">🚗</span> Buy Cars
-                        </span>
-                        <span className="marquee-divider">✦</span>
-                        <span className="marquee-item">
-                            <span className="marquee-icon">📋</span> Evaluate / Sell
-                        </span>
-                        <span className="marquee-divider">✦</span>
-                        <span className="marquee-item">
-                            <span className="marquee-icon">💰</span> Best Prices
-                        </span>
-                        <span className="marquee-divider">✦</span>
-                        <span className="marquee-item">
-                            <span className="marquee-icon">✅</span> Verified Cars
-                        </span>
-                        <span className="marquee-divider">✦</span>
-                        <span className="marquee-item">
-                            <span className="marquee-icon">📞</span> Call Now
-                        </span>
-                        <span className="marquee-divider">✦</span>
-                        <span className="marquee-item">
-                            <span className="marquee-icon"><i className="bi bi-whatsapp"></i></span> WhatsApp
-                        </span>
-                        <span className="marquee-divider">✦</span>
-                        <span className="marquee-item">
-                            <span className="marquee-icon">🏦</span> Easy Loans
-                        </span>
-                        <span className="marquee-divider">✦</span>
-                        <span className="marquee-item">
-                            <span className="marquee-icon">🛡️</span> Insurance
-                        </span>
-                        <span className="marquee-divider">✦</span>
-                        <span className="marquee-item">
-                            <span className="marquee-icon">⭐</span> 4.9 Rating
-                        </span>
-                        <span className="marquee-divider">✦</span>
-                        <span className="marquee-item">
-                            <span className="marquee-icon">🚀</span> Quick Delivery
-                        </span>
-                        <span className="marquee-divider">✦</span>
-                        <span className="marquee-item">
-                            <span className="marquee-icon">🤝</span> Trusted Dealers
-                        </span>
-                    </div>
-                </div>
-            </section>
+<section className="hp-service-marquee">
 
+    <marquee
+        behavior="scroll"
+        direction="left"
+        scrollAmount="5"
+        onMouseOver={(e) => e.target.stop()}
+        onMouseOut={(e) => e.target.start()}
+    >
+
+        {/* Card 1 */}
+        <a href="/cars" className="hp-service-card">
+            <span className="sticker">🔥 HOT</span>
+            <div className="floating-bg">🚗</div>
+            <div className="icon">🚗</div>
+            <h5>Buy Cars</h5>
+        </a>
+
+        {/* Card 2 */}
+        <a href="/seller" className="hp-service-card">
+            <span className="sticker">💰 BEST</span>
+            <div className="floating-bg">🚘</div>
+            <div className="icon">📋</div>
+            <h5>Sell Car</h5>
+        </a>
+
+        {/* Card 3 */}
+        <a
+            href="https://wa.me/918468853896?text=Hi%20I%20want%20Car%20EMI"
+            className="hp-service-card"
+        >
+            <span className="sticker">💸 EMI</span>
+            <div className="floating-bg">🏦</div>
+            <div className="icon">💳</div>
+            <h5>Ask EMI</h5>
+        </a>
+
+        {/* Card 4 */}
+        <a href="#contact" className="hp-service-card">
+            <span className="sticker">⚡ NOW</span>
+            <div className="floating-bg">📞</div>
+            <div className="icon">📞</div>
+            <h5>Quick Enquiry</h5>
+        </a>
+
+        {/* Card 5 */}
+        <a
+            href="https://wa.me/918468853896"
+            className="hp-service-card"
+        >
+            <span className="sticker">💬 LIVE</span>
+            <div className="floating-bg">💚</div>
+            <div className="icon">
+                <i className="bi bi-whatsapp"></i>
+            </div>
+            <h5>WhatsApp</h5>
+        </a>
+
+        {/* Card 6 */}
+        <a href="/cars" className="hp-service-card">
+            <span className="sticker">⚡ EV</span>
+            <div className="floating-bg">🔋</div>
+            <div className="icon">🚘</div>
+            <h5>Electric Cars</h5>
+        </a>
+
+        {/* Card 7 */}
+        <div className="hp-service-card no-click">
+            <span className="sticker">🚀 FAST</span>
+            <div className="floating-bg">🚚</div>
+            <div className="icon">🚚</div>
+            <h5>Delivery</h5>
+        </div>
+
+        {/* Card 8 */}
+        <a href="/seller" className="hp-service-card">
+            <span className="sticker">🏆 TOP</span>
+            <div className="floating-bg">💰</div>
+            <div className="icon">🚗</div>
+            <h5>Sell Car</h5>
+        </a>
+
+        {/* Card 9 */}
+        <a href="/cars" className="hp-service-card">
+            <span className="sticker">⭐ NEW</span>
+            <div className="floating-bg">🚙</div>
+            <div className="icon">🚙</div>
+            <h5>Buy Cars</h5>
+        </a>
+
+        <div className="hp-service-card no-click">
+    <span className="sticker">🚗 DOORSTEP</span>
+    <div className="floating-bg">🏠</div>
+
+    <div className="icon">🚚</div>
+
+    <h5>Doorstep Service</h5>
+    <small>Anywhere in India</small>
+</div>
+
+{/* Online Service (Not Clickable) */}
+<div className="hp-service-card no-click">
+    <span className="sticker">🌐 ONLINE</span>
+    <div className="floating-bg">💻</div>
+
+    <div className="icon">
+        <i className="bi bi-globe2"></i>
+    </div>
+
+    <h5>Online Service</h5>
+    <small>Available 24×7</small>
+</div>
+
+    </marquee>
+
+</section>
             {/* ==================== ABOUT ==================== */}
             <section className="hp-about">
                 <div className="container">
@@ -716,24 +785,32 @@ const HomePage = () => {
 
             {/* ==================== POPUP ==================== */}
             {showPopup && (
-                <div className="hp-popup-overlay">
-                    <div className="hp-popup-card">
-                        <button className="hp-popup-close" onClick={closePopup}>
-                            <i className="bi bi-x-lg"></i>
-                        </button>
-                        <div className="hp-popup-banner" onClick={handleBannerClick}>
-                            <div className="hp-popup-icon">🚗</div>
-                            <div className="hp-popup-content">
-                                <span className="hp-popup-badge"><i className="bi bi-fire"></i> Special Offer</span>
-                                <h3>Get ₹10,000 Off</h3>
-                                <p>On your first car purchase</p>
-                                <button className="hp-popup-btn">
-                                    View Cars <i className="bi bi-arrow-right"></i>
+                    <div className="popup-overlay">
+                            <div className="popup-card">
+
+                                <button
+                                    className="popup-close"
+                                    onClick={closePopup}
+                                >
+                                    ✕
                                 </button>
+
+                                <div
+                                    className="popup-banner"
+                                    onClick={handleBannerClick}
+                                >
+                                    <img src="/favicon.png" alt="Offer"/>
+
+                                    <div className="popup-content">
+                                    
+                                        <button className="popup-btn">
+                                            🚗 View Cars → 
+                                        </button>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                </div>
             )}
 
             {/* ==================== ADD TO CSS ==================== */}

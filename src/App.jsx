@@ -6,6 +6,7 @@ import AdminPortal from './components/admin/AdminPortal';
 import SellerPortal from './components/seller/SellerPortal'; // ✅ ADD THIS
 import './App.css';
 import './admin.css';
+import NotificationPermission from "./components/NotificationPermission";
 
 // ✅ ScrollToTop Component
 const ScrollToTop = () => {
@@ -23,6 +24,9 @@ const App = () => {
     <AuthProvider>
       <Router>
         <ScrollToTop />
+
+           {/* Notification Permission */}
+        <NotificationPermission />
         <Routes>
           {/* User Portal */}
           <Route path="/*" element={<UserPortal />} />
@@ -35,6 +39,7 @@ const App = () => {
 
           {/* Default */}
           <Route path="*" element={<Navigate to="/" />} />
+         
         </Routes>
       </Router>
     </AuthProvider>

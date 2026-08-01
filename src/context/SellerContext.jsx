@@ -119,26 +119,30 @@ export const SellerProvider = ({ children }) => {
 
     // ✅ Only load data if authenticated
     useEffect(() => {
-        const loadData = async () => {
-            setLoading(true);
-            const token = localStorage.getItem('authToken');
-            if (token) {
-                await Promise.all([fetchSellerCars(), fetchStats()]);
-            } else {
-                // ✅ Reset data when not authenticated
-                setSellerCars([]);
-                setStats({
-                    total_cars: 0,
-                    pending: 0,
-                    approved: 0,
-                    rejected: 0,
-                    sold: 0
-                });
-            }
-            setLoading(false);
-        };
-        loadData();
-    }, []);
+    const loadData = async () => {
+        setLoading(true);
+
+        if (isAuthenticated) {
+            await Promise.all([
+                fetchSellerCars(),
+                fetchStats()
+            ]);
+        } else {
+            setSellerCars([]);
+            setStats({
+                total_cars: 0,
+                pending: 0,
+                approved: 0,
+                rejected: 0,
+                sold: 0
+            });
+        }
+
+        setLoading(false);
+    };
+
+    loadData();
+}, [isAuthenticated]);
 
     const value = {
         sellerCars,
