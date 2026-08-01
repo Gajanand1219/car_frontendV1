@@ -4,7 +4,7 @@ import { getFirebaseMessaging } from "../firebase/firebase";
 
 const VAPID_KEY = import.meta.env.VITE_FIREBASE_VAPID_KEY;
 
-// const API_URL = "http://127.0.0.1:8000/api/v1";
+
 const API_URL = "https://car-backendv1.onrender.com/api/v1";
 
 
