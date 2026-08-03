@@ -302,13 +302,16 @@ const HomePage = () => {
                 <span className="hp-service-arrow"><i className="bi bi-arrow-right"></i></span>
                 <span className="hp-service-float-icon">📋</span>
             </div>
-            <div className="hp-service-box" onClick={() => window.open('https://www.netc.org.in/', '_blank')}>
-                <span className="hp-service-icon"><i className="bi bi-tag"></i></span>
-                <h4>FASTag</h4>
-                <p>Recharge</p>
-                <span className="hp-service-arrow"><i className="bi bi-arrow-right"></i></span>
-                <span className="hp-service-float-icon">🏷️</span>
-            </div>
+            <div
+                    className="hp-service-box"
+                    onClick={() => window.open('/how-buy-sell.mp4', '_blank')}
+                >
+                    <span className="hp-service-icon"><i className="bi bi-play-circle"></i></span>
+                    <h4>How to Buy & Sell</h4>
+                    <p>Watch Video</p>
+                    <span className="hp-service-arrow"><i className="bi bi-arrow-right"></i></span>
+                    <span className="hp-service-float-icon">🎥</span>
+                </div>
         </div>
     </div>
 </section>
@@ -453,6 +456,7 @@ const HomePage = () => {
                                 <span><i className="bi bi-check-circle-fill"></i> Free Inspection</span>
                                 <span><i className="bi bi-graph-up-arrow"></i> Instant Price</span>
                                 <span><i className="bi bi-hand-thumbs-up-fill"></i> No Obligation</span>
+
                             </div>
                             <button className="hp-btn-evaluate" onClick={handleSellCar}>
                                 <i className="bi bi-car-front-fill"></i> Sell Your Car
@@ -463,6 +467,17 @@ const HomePage = () => {
                             <div className="hp-eval-float price"><i className="bi bi-currency-rupee"></i> Best Price</div>
                             <div className="hp-eval-float inspect"><i className="bi bi-search"></i> Free Inspection</div>
                             <div className="hp-eval-float trust"><i className="bi bi-shield-check"></i> Trusted</div>
+                            <div className="hp-eval-float inspect"><i className="bi bi-search"></i> Free Inspection</div>
+                            <a
+                                href="/how-buy-sell.mp4"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hp-eval-float video"
+                            >
+                                <i className="bi bi-play-circle-fill"></i>
+                                Watch Video ▶
+                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -471,122 +486,161 @@ const HomePage = () => {
 
 
             {/* ==================== MARQUEE SERVICES ==================== */}
-<section className="hp-service-marquee">
+            <section className="hp-service-marquee">
 
-    <marquee
-        behavior="scroll"
-        direction="left"
-        scrollAmount="5"
-        onMouseOver={(e) => e.target.stop()}
-        onMouseOut={(e) => e.target.start()}
-    >
+                <marquee
+                    behavior="scroll"
+                    direction="left"
+                    scrollAmount="8"
+                    onMouseOver={(e) => e.target.stop()}
+                    onMouseOut={(e) => e.target.start()}
+                >
 
-        {/* Card 1 */}
-        <a href="/cars" className="hp-service-card">
-            <span className="sticker">🔥 HOT</span>
-            <div className="floating-bg">🚗</div>
-            <div className="icon">🚗</div>
-            <h5>Buy Cars</h5>
-        </a>
 
-        {/* Card 2 */}
-        <a href="/seller" className="hp-service-card">
-            <span className="sticker">💰 BEST</span>
-            <div className="floating-bg">🚘</div>
-            <div className="icon">📋</div>
-            <h5>Sell Car</h5>
-        </a>
+                    {/* How to Buy & Sell Video */}
+                        <a
+                            href="/how-buy-sell.mp4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hp-service-card"
+                        >
+                            <span className="sticker">🎥 GUIDE</span>
+                            <div className="floating-bg">🎬</div>
 
-        {/* Card 3 */}
-        <a
-            href="https://wa.me/918468853896?text=Hi%20I%20want%20Car%20EMI"
-            className="hp-service-card"
-        >
-            <span className="sticker">💸 EMI</span>
-            <div className="floating-bg">🏦</div>
-            <div className="icon">💳</div>
-            <h5>Ask EMI</h5>
-        </a>
+                            <div className="icon">
+                                <i className="bi bi-play-circle-fill"></i>
+                            </div>
 
-        {/* Card 4 */}
-        <a href="#contact" className="hp-service-card">
-            <span className="sticker">⚡ NOW</span>
-            <div className="floating-bg">📞</div>
-            <div className="icon">📞</div>
-            <h5>Quick Enquiry</h5>
-        </a>
+                            <h5>How to Buy & Sell</h5>
+                            <small>Watch Video</small>
+                        </a>
 
-        {/* Card 5 */}
-        <a
-            href="https://wa.me/918468853896"
-            className="hp-service-card"
-        >
-            <span className="sticker">💬 LIVE</span>
-            <div className="floating-bg">💚</div>
-            <div className="icon">
-                <i className="bi bi-whatsapp"></i>
+
+                    {/* Card 1 */}
+                    <a href="/cars" className="hp-service-card">
+                        <span className="sticker">🔥 HOT</span>
+                        <div className="floating-bg">🚗</div>
+                        <div className="icon">🚗</div>
+                        <h5>Buy Cars</h5>
+                    </a>
+
+                    {/* Card 2 */}
+                    <a href="/seller" className="hp-service-card">
+                        <span className="sticker">💰 BEST</span>
+                        <div className="floating-bg">🚘</div>
+                        <div className="icon">📋</div>
+                        <h5>Sell Car</h5>
+                    </a>
+
+                    {/* Card 3 */}
+                    <a
+                        href="https://wa.me/918468853896?text=Hi%20I%20want%20Car%20EMI"
+                        className="hp-service-card"
+                    >
+                        <span className="sticker">💸 EMI</span>
+                        <div className="floating-bg">🏦</div>
+                        <div className="icon">💳</div>
+                        <h5>Ask EMI</h5>
+                    </a>
+
+                    {/* Card 4 */}
+                    <a href="#contact" className="hp-service-card">
+                        <span className="sticker">⚡ NOW</span>
+                        <div className="floating-bg">📞</div>
+                        <div className="icon">📞</div>
+                        <h5>Quick Enquiry</h5>
+                    </a>
+
+                    {/* Card 5 */}
+                    <a
+                        href="https://wa.me/918468853896"
+                        className="hp-service-card"
+                    >
+                        <span className="sticker">💬 LIVE</span>
+                        <div className="floating-bg">💚</div>
+                        <div className="icon">
+                            <i className="bi bi-whatsapp"></i>
+                        </div>
+                        <h5>WhatsApp</h5>
+                    </a>
+
+                    {/* Card 6 */}
+                    <a href="/cars" className="hp-service-card">
+                        <span className="sticker">⚡ EV</span>
+                        <div className="floating-bg">🔋</div>
+                        <div className="icon">🚘</div>
+                        <h5>Electric Cars</h5>
+                    </a>
+
+                    {/* Card 7 */}
+                    <div className="hp-service-card no-click">
+                        <span className="sticker">🚀 FAST</span>
+                        <div className="floating-bg">🚚</div>
+                        <div className="icon">🚚</div>
+                        <h5>Delivery</h5>
+                    </div>
+
+                    {/* Card 8 */}
+                    <a href="/seller" className="hp-service-card">
+                        <span className="sticker">🏆 TOP</span>
+                        <div className="floating-bg">💰</div>
+                        <div className="icon">🚗</div>
+                        <h5>Sell Car</h5>
+                    </a>
+
+                    {/* Card 9 */}
+                    <a href="/cars" className="hp-service-card">
+                        <span className="sticker">⭐ NEW</span>
+                        <div className="floating-bg">🚙</div>
+                        <div className="icon">🚙</div>
+                        <h5>Buy Cars</h5>
+                    </a>
+
+                    <div className="hp-service-card no-click">
+                        <span className="sticker">🚗 DOORSTEP</span>
+                        <div className="floating-bg">🏠</div>
+
+                        <div className="icon">🚚</div>
+
+                        <h5>Doorstep Service</h5>
+                        <small>Anywhere in India</small>
+                    </div>
+
+            {/* Online Service (Not Clickable) */}
+            <div className="hp-service-card no-click">
+                <span className="sticker">🌐 ONLINE</span>
+                <div className="floating-bg">💻</div>
+
+                <div className="icon">
+                    <i className="bi bi-globe2"></i>
+                </div>
+
+                <h5>Online Service</h5>
+                <small>Available 24×7</small>
             </div>
-            <h5>WhatsApp</h5>
-        </a>
+            
 
-        {/* Card 6 */}
-        <a href="/cars" className="hp-service-card">
-            <span className="sticker">⚡ EV</span>
-            <div className="floating-bg">🔋</div>
-            <div className="icon">🚘</div>
-            <h5>Electric Cars</h5>
-        </a>
+                        {/* How to Buy & Sell Video */}
+            <a
+                href="/how-buy-sell.mp4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hp-service-card"
+            >
+                <span className="sticker">🎥 GUIDE</span>
+                <div className="floating-bg">🎬</div>
 
-        {/* Card 7 */}
-        <div className="hp-service-card no-click">
-            <span className="sticker">🚀 FAST</span>
-            <div className="floating-bg">🚚</div>
-            <div className="icon">🚚</div>
-            <h5>Delivery</h5>
-        </div>
+                <div className="icon">
+                    <i className="bi bi-play-circle-fill"></i>
+                </div>
 
-        {/* Card 8 */}
-        <a href="/seller" className="hp-service-card">
-            <span className="sticker">🏆 TOP</span>
-            <div className="floating-bg">💰</div>
-            <div className="icon">🚗</div>
-            <h5>Sell Car</h5>
-        </a>
+                <h5>How to Buy & Sell</h5>
+                <small>Watch Video</small>
+            </a>
 
-        {/* Card 9 */}
-        <a href="/cars" className="hp-service-card">
-            <span className="sticker">⭐ NEW</span>
-            <div className="floating-bg">🚙</div>
-            <div className="icon">🚙</div>
-            <h5>Buy Cars</h5>
-        </a>
+                </marquee>
 
-        <div className="hp-service-card no-click">
-    <span className="sticker">🚗 DOORSTEP</span>
-    <div className="floating-bg">🏠</div>
-
-    <div className="icon">🚚</div>
-
-    <h5>Doorstep Service</h5>
-    <small>Anywhere in India</small>
-</div>
-
-{/* Online Service (Not Clickable) */}
-<div className="hp-service-card no-click">
-    <span className="sticker">🌐 ONLINE</span>
-    <div className="floating-bg">💻</div>
-
-    <div className="icon">
-        <i className="bi bi-globe2"></i>
-    </div>
-
-    <h5>Online Service</h5>
-    <small>Available 24×7</small>
-</div>
-
-    </marquee>
-
-</section>
+            </section>
             {/* ==================== ABOUT ==================== */}
             <section className="hp-about">
                 <div className="container">
@@ -786,31 +840,41 @@ const HomePage = () => {
             {/* ==================== POPUP ==================== */}
             {showPopup && (
                     <div className="popup-overlay">
-                            <div className="popup-card">
+    <div className="popup-card">
 
-                                <button
-                                    className="popup-close"
-                                    onClick={closePopup}
-                                >
-                                    ✕
-                                </button>
+        <button
+            className="popup-close"
+            onClick={closePopup}
+        >
+            ✕
+        </button>
 
-                                <div
-                                    className="popup-banner"
-                                    onClick={handleBannerClick}
-                                >
-                                    <img src="/favicon.png" alt="Offer"/>
+        <div
+            className="popup-banner"
+            onClick={handleBannerClick}
+        >
+            <img src="/favicon.png" alt="Offer" />
 
-                                    <div className="popup-content">
-                                    
-                                        <button className="popup-btn">
-                                            🚗 View Cars → 
-                                        </button>
-                                    </div>
-                                </div>
+            <div className="popup-content">
 
-                            </div>
-                        </div>
+                <a
+                    href="/how-buy-sell.mp4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="how-buy-sell-link"
+                >
+                    🎥 How to Buy & Sell Car?
+                </a>
+
+                <button className="popup-btn">
+                    🚗 View Cars →
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
             )}
 
             {/* ==================== ADD TO CSS ==================== */}
