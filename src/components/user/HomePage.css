@@ -1495,6 +1495,44 @@ background:linear-gradient(135deg,#43cea2,#185a9d);
 background:linear-gradient(135deg,#4568dc,#b06ab3);
 }
 
+.hp-service-card:nth-child(11){
+    background: linear-gradient(135deg,#ff6a00,#ee0979);
+}
+
+.hp-service-card:nth-child(12){
+    background: linear-gradient(135deg,#00b09b,#96c93d);
+}
+
+.hp-service-card:nth-child(13){
+    background: linear-gradient(135deg,#7F00FF,#E100FF);
+}
+
+
+.hp-eval-float.video{
+    top:80%;
+    right:2%;
+    background:linear-gradient(135deg,#ff512f,#dd2476);
+    color:#fff;
+    text-decoration:none;
+    cursor:pointer;
+
+    animation:videoPulse 1.5s infinite;
+}
+
+@keyframes videoPulse{
+    0%{
+        transform:scale(1);
+        box-shadow:0 0 0 0 rgba(255,81,47,.6);
+    }
+    70%{
+        transform:scale(1.08);
+        box-shadow:0 0 0 15px rgba(255,81,47,0);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
 .hp-service-card:hover{
 
 transform:translateY(-12px) scale(1.08);
@@ -2571,4 +2609,53 @@ opacity:.4;
 
 [data-theme="dark"] .hp-marquee-section {
     background: linear-gradient(135deg, #1a1a3e, #2d1b69, #1a1a3e);
+}
+
+
+.how-buy-sell-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #ff7a18, #ffb347);
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 30px;
+    box-shadow: 0 6px 18px rgba(255, 122, 24, 0.35);
+    transition: all 0.3s ease;
+    animation: floating 2.5s ease-in-out infinite;
+}
+
+
+@media (max-width: 768px) {
+    .popup-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Left align */
+        gap: 8px;
+    }
+
+    .how-buy-sell-link {
+        align-self: flex-start;
+        font-size: 8px;
+        padding: 5px 5px;
+        margin-bottom: 0;
+    }
+}
+
+.how-buy-sell-link:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 122, 24, 0.5);
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
 }
